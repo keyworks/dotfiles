@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/keyworks/.vim'
+let g:netrw_dirhist_2='/Users'
+let g:netrw_dirhist_3='/Users/keyworks'
+let g:netrw_dirhist_4='/Users/keyworks/Documents/Code/ruby/add_numbers.rb'
+let g:netrw_dirhist_5='/Users/keyworks/Documents/Code/ruby'
+let g:netrw_dirhist_6='/Users/keyworks/Documents/Code/rails/bweets/app/views/tweets'
+let g:netrw_dirhist_7='/usr/local/bin'
+let g:netrw_dirhist_8='/usr/bin'
+let g:netrw_dirhist_9='/Users/keyworks/Code/the_rspec_book/cb/01/lib/codebreaker'

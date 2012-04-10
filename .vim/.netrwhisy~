@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib'
+let g:netrw_dirhist_2='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib/rdio'
+let g:netrw_dirhist_3='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib'
+let g:netrw_dirhist_4='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib/rdio'
+let g:netrw_dirhist_5='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib'
+let g:netrw_dirhist_6='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib/rdio'
+let g:netrw_dirhist_7='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/rdio-0.0.98/lib'

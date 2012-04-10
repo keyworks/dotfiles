@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/keyworks/Code/rails/twitter_timeline/app/models'
+let g:netrw_dirhist_2='/Users/keyworks/Code/rails/twitter_timeline/app'
+let g:netrw_dirhist_3='/Users/keyworks/Code/rails/twitter_timeline/app/controllers'
+let g:netrw_dirhist_4='/Users/keyworks/Code/rails/twitter_timeline/app'
+let g:netrw_dirhist_5='/Users/keyworks/Code/rails/twitter_timeline'
+let g:netrw_dirhist_6='/Users/keyworks/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2'
+let g:netrw_dirhist_7='/Users/keyworks/Code/rails/jaykim'
+let g:netrw_dirhist_8='/Users/keyworks/Code/sinatra/rdio_crowd_source'

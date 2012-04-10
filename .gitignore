@@ -1,0 +1,11 @@
+*
+!.gitignore
+
+!.bash_profile
+!.bashrc
+!.gemrc
+!.gitconfig
+!.rdebugrc
+!.tmux.conf
+!.vimrc
+!.vim/
