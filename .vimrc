@@ -137,3 +137,6 @@ let NERDTreeMouseMode=1 " Single click for everything
 " FuzzyFinder *****************************************************************
 :noremap <Leader>f :FufFile<CR>
 :noremap <leader>b :FufBuffer<CR>
+
+" Slime **********************************************************************
+let g:slime_target = "tmux"
