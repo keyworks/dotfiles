@@ -1,7 +1,5 @@
 # Custom Aliases
 alias ls='ls -p'
-alias safari='open -a safari $*'
-alias shist='history | grep $1'
 alias grep='grep --color=auto'
 alias rspec='rspec --color'
 alias c='clear'
