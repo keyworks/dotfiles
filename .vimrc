@@ -16,6 +16,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'bbommarito/vim-slim'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-powerline'
 
 " vim-script repos
 Bundle 'L9'
@@ -85,6 +86,7 @@ set nofoldenable " Turn off folding
 set mouse=a " This enables proper behaviour copy/paste with mouse
 set t_Co=256 " 256 colors in tmux.
 set nocompatible
+set encoding=utf-8
 
 " Navigation ******************************************************************
 map <Leader>p <C-^> " Go to previous file
@@ -113,3 +115,6 @@ noremap <leader>b :FufBuffer<CR>
 
 " Slime **********************************************************************
 let g:slime_target = "tmux"
+
+" Powerline *******************************************************************
+set laststatus=2
