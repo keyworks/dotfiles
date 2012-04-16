@@ -8,4 +8,6 @@
 !.rdebugrc
 !.tmux.conf
 !.vimrc
-!.vim/color
+!.vim/colors/
+!.vim/autoload/
+!.vim/bundle/vundle/
