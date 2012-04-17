@@ -22,6 +22,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'eruby.vim'
+Bundle 'Jinja'
 
 " File stuff ******************************************************************
 filetype plugin indent on
@@ -29,10 +30,14 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
 autocmd FileType ruby set softtabstop=2
 autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set expandtab
+
+au BufNewFile,BufRead *.twig set filetype=htmljinja
+autocmd FileType htmljinja set noexpandtab
 
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
@@ -111,7 +116,7 @@ let NERDTreeMouseMode=1 " Single click for everything
 
 " FuzzyFinder *****************************************************************
 noremap <Leader>f :FufFile<CR>
-noremap <leader>b :FufBuffer<CR>
+noremap <Leader>b :FufBuffer<CR>
 
 " Slime **********************************************************************
 let g:slime_target = "tmux"
