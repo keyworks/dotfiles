@@ -2,6 +2,7 @@ call pathogen#infect()
 let mapleader = ","
 
 " Vundle **********************************************************************
+let g:vundle_default_git_proto = 'git'
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
