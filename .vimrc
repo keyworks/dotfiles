@@ -2,6 +2,7 @@ call pathogen#infect()
 let mapleader = ","
 
 " Vundle **********************************************************************
+let g:vundle_default_git_proto = 'git'
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -22,6 +23,7 @@ Bundle 'kien/ctrlp.vim'
 " vim-script repos
 Bundle 'L9'
 Bundle 'eruby.vim'
+Bundle 'Jinja'
 
 " File stuff ******************************************************************
 filetype plugin indent on
@@ -29,6 +31,7 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
 autocmd FileType ruby set softtabstop=2
 autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby set tabstop=2
@@ -39,6 +42,9 @@ autocmd FileType javascript set shiftwidth=2
 autocmd FileType javascript set tabstop=2
 
 autocmd FileType ejs set syntax=eruby
+
+au BufNewFile,BufRead *.twig set filetype=htmljinja
+autocmd FileType htmljinja set noexpandtab
 
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
