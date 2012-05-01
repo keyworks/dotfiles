@@ -17,10 +17,10 @@ Bundle 'bbommarito/vim-slim'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
 
 " vim-script repos
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'eruby.vim'
 
 " File stuff ******************************************************************
@@ -34,6 +34,12 @@ autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set expandtab
 
+autocmd FileType javascript set softtabstop=2
+autocmd FileType javascript set shiftwidth=2
+autocmd FileType javascript set tabstop=2
+
+autocmd FileType ejs set syntax=eruby
+
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent (local to buffer)
@@ -45,10 +51,6 @@ set numberwidth=4
 " Windows *********************************************************************
 set equalalways " Multiple windows, when created, are equal in size
 set splitbelow splitright
-
-" Vertical and horizontal split then hop to a new buffer
-noremap <Leader>v :vsp^M^W^W<cr>
-noremap <Leader>h :split^M^W^W<cr>
 
 " Searching *******************************************************************
 set hlsearch  " highlight search
@@ -106,8 +108,11 @@ noremap <Leader>] :tabn<CR>
 
 " NERDTree ********************************************************************
 noremap <Leader>n :NERDTreeToggle<CR>
-let NERDTreeHijackNetrw=1 " Use instead of Netrw when doing an edit /foobar
-let NERDTreeMouseMode=1 " Single click for everything
+let NERDTreeHijackNetrw=0 " Use instead of Netrw when doing an edit
+let NERDTreeMouseMode=2 " Single click for directories only
+let NERDTreeShowBookmarks=1 " Always show bookmarks
+let NERDTreeShowHidden=1 " Show hidden
+let NERDTreeMinimalUI=1
 
 " FuzzyFinder *****************************************************************
 noremap <Leader>f :FufFile<CR>
