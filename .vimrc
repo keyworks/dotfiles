@@ -114,10 +114,6 @@ let NERDTreeShowBookmarks=1 " Always show bookmarks
 let NERDTreeShowHidden=1 " Show hidden
 let NERDTreeMinimalUI=1
 
-" FuzzyFinder *****************************************************************
-noremap <Leader>f :FufFile<CR>
-noremap <leader>b :FufBuffer<CR>
-
 " Slime **********************************************************************
 let g:slime_target = "tmux"
 
