@@ -73,10 +73,6 @@ colorscheme solarized
 set nowrap
 set linebreak  " Wrap at word
 
-" Insert New Line *************************************************************
-map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
-map <Enter> o<ESC>
-
 " Sessions ********************************************************************
 " Sets what is saved when you save a session
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
