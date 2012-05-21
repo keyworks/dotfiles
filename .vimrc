@@ -27,19 +27,10 @@ Bundle 'Jinja'
 
 " File stuff ******************************************************************
 filetype plugin indent on
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
 set expandtab
-
-autocmd FileType ruby set softtabstop=2
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set expandtab
-
-autocmd FileType javascript set softtabstop=2
-autocmd FileType javascript set shiftwidth=2
-autocmd FileType javascript set tabstop=2
 
 autocmd FileType ejs set syntax=eruby
 
@@ -65,9 +56,8 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Colors **********************************************************************
-set background=dark
 syntax on " syntax highlighting
-colorscheme solarized
+colorscheme Tomorrow
 
 " Line Wrapping ***************************************************************
 set nowrap
@@ -115,6 +105,7 @@ let NERDTreeMouseMode=2 " Single click for directories only
 let NERDTreeShowBookmarks=1 " Always show bookmarks
 let NERDTreeShowHidden=1 " Show hidden
 let NERDTreeMinimalUI=1
+let NERDTreeChDirMode=2
 
 " Slime **********************************************************************
 let g:slime_target = "tmux"
