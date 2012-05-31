@@ -67,7 +67,7 @@ set linebreak  " Wrap at word
 " Sets what is saved when you save a session
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
-" Invisible characters *********************************************************
+" Invisible characters ********************************************************
 set listchars=trail:.,tab:>-,eol:$
 set nolist
 noremap <Leader>i :set list!<CR> " Toggle invisible chars
@@ -81,6 +81,7 @@ set mouse=a " This enables proper behaviour copy/paste with mouse
 set t_Co=256 " 256 colors in tmux.
 set nocompatible
 set encoding=utf-8
+set colorcolumn=80
 
 " Navigation ******************************************************************
 map <Leader>p <C-^> " Go to previous file

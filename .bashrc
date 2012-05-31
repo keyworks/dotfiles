@@ -1,10 +1,10 @@
 # Custom Aliases
 alias ls='ls -p'
 alias grep='grep --color=auto'
-alias rspec='rspec --color'
 alias c='clear'
 alias be='bundle exec $*'
 alias chrome="open -a 'Google Chrome' $*"
+alias rspec='rspec -f doc --color'
 
 # Colorize the Terminal
 export PS1="\W: " 
