@@ -1,5 +1,4 @@
 call pathogen#infect()
-let mapleader = ","
 
 " Vundle **********************************************************************
 let g:vundle_default_git_proto = 'git'
@@ -32,10 +31,13 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 
-autocmd FileType ejs set syntax=eruby
+augroup custom_autocmds
+  autocmd!
+  autocmd FileType ejs setlocal syntax=eruby
 
-au BufNewFile,BufRead *.twig set filetype=htmljinja
-autocmd FileType htmljinja set noexpandtab
+  autocmd BufNewFile,BufRead *.twig setlocal filetype=htmljinja
+  autocmd FileType htmljinja setlocal noexpandtab
+augroup END
 
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
@@ -70,7 +72,6 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 " Invisible characters ********************************************************
 set listchars=trail:.,tab:>-,eol:$
 set nolist
-noremap <Leader>i :set list!<CR> " Toggle invisible chars
 
 " Misc settings ***************************************************************
 set backspace=indent,eol,start
@@ -83,24 +84,7 @@ set nocompatible
 set encoding=utf-8
 set colorcolumn=80
 
-" Navigation ******************************************************************
-map <Leader>p <C-^> " Go to previous file
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-
-" Tabs ***********************************************************************
-noremap <Leader>t :tabnew<CR>
-noremap <Leader>[ :tabp<CR>
-noremap <Leader>] :tabn<CR>
-
 " NERDTree ********************************************************************
-noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=0 " Use instead of Netrw when doing an edit
 let NERDTreeMouseMode=2 " Single click for directories only
 let NERDTreeShowBookmarks=1 " Always show bookmarks
@@ -113,3 +97,38 @@ let g:slime_target = "tmux"
 
 " Powerline *******************************************************************
 set laststatus=2
+
+" Pastebin *******************************************************************
+let g:pastebin_resource = "http://localhost:5000"
+
+" Mappings *******************************************************************
+let mapleader = ","
+
+" Use C-C instead
+inoremap <Esc> <NOP>
+
+" Toggle invisible characters
+nnoremap <Leader>i :set list!<CR>
+
+" Navigation
+nnoremap <Leader>p <C-^> " Go to previous file
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+nnoremap  <Up>     <NOP>
+nnoremap  <Down>   <NOP>
+nnoremap  <Left>   <NOP>
+nnoremap  <Right>  <NOP>
+
+" Tabs
+nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>[ :tabp<CR>
+nnoremap <Leader>] :tabn<CR>
+
+" NERDTree
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
