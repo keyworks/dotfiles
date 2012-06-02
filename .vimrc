@@ -93,13 +93,13 @@ let NERDTreeMinimalUI=1
 let NERDTreeChDirMode=2
 
 " Slime **********************************************************************
-let g:slime_target = "tmux"
+let slime_target = "tmux"
 
 " Powerline *******************************************************************
 set laststatus=2
 
 " Pastebin *******************************************************************
-let g:pastebin_resource = "http://localhost:5000"
+let pastebin_resource = "http://localhost:5000"
 
 " Mappings *******************************************************************
 let mapleader = ","
