@@ -14,10 +14,15 @@ Bundle 'groenewege/vim-less'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'bbommarito/vim-slim'
-Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'sukima/xmledit'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-ruby/vim-ruby'
+Bundle "pangloss/vim-javascript"
+Bundle "juvenn/mustache.vim"
+
 
 " vim-script repos
 Bundle 'L9'
@@ -33,9 +38,11 @@ set expandtab
 
 augroup custom_autocmds
   autocmd!
-  autocmd FileType ejs setlocal syntax=eruby
+  autocmd BufWritePre * :%s/\v\s+$//e
 
-  autocmd BufNewFile,BufRead *.twig setlocal filetype=htmljinja
+  autocmd FileType ejs setlocal syntax=eruby
+  autocmd FileType hbs setlocal filetype=mustache
+  autocmd FileType twig setlocal filetype=htmljinja
   autocmd FileType htmljinja setlocal noexpandtab
 augroup END
 
@@ -54,12 +61,12 @@ set splitbelow splitright
 " Searching *******************************************************************
 set hlsearch  " highlight search
 set incsearch  " Incremental search, search as you type
-set ignorecase " Ignore case when searching 
+set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Colors **********************************************************************
 syntax on " syntax highlighting
-colorscheme Tomorrow
+colorscheme Tomorrow-Night-Bright
 
 " Line Wrapping ***************************************************************
 set nowrap
@@ -77,7 +84,7 @@ set nolist
 set backspace=indent,eol,start
 set number " Show line numbers
 set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
-set nofoldenable " Turn off folding 
+set nofoldenable " Turn off folding
 set mouse=a " This enables proper behaviour copy/paste with mouse
 set t_Co=256 " 256 colors in tmux.
 set nocompatible
@@ -92,9 +99,6 @@ let NERDTreeShowHidden=1 " Show hidden
 let NERDTreeMinimalUI=1
 let NERDTreeChDirMode=2
 
-" Slime **********************************************************************
-let slime_target = "tmux"
-
 " Powerline *******************************************************************
 set laststatus=2
 
@@ -103,6 +107,7 @@ let pastebin_resource = "http://localhost:5000"
 
 " Mappings *******************************************************************
 let mapleader = ","
+let maplocalleader = '\'
 
 " Use C-C instead
 inoremap <Esc> <NOP>
@@ -132,3 +137,6 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Syntastic
+let g:syntastic_check_on_open=1
