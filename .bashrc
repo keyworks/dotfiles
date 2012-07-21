@@ -12,6 +12,7 @@ export CLICOLOR=cons25 # syntax colour the shell output
 export LSCOLORS="dxfxcxdxbxegedabagacad" # alter the colours a little
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules" # detect node libraries
+export EDITOR="vim"
 
 # rbenv setup
 export PATH="$HOME/.rbenv/bin:$PATH"
