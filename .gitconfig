@@ -23,3 +23,5 @@
   	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [diff]
 	tool = vimdiff
+[merge]
+	conflictstyle = "diff3"
