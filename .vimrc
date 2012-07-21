@@ -23,7 +23,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle "pangloss/vim-javascript"
 Bundle "juvenn/mustache.vim"
 
-
 " vim-script repos
 Bundle 'L9'
 Bundle 'eruby.vim'
