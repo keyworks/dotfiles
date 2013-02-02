@@ -22,6 +22,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'vim-ruby/vim-ruby'
 Bundle "pangloss/vim-javascript"
 Bundle "juvenn/mustache.vim"
+Bundle "keyworks/vim-pastebin"
 
 
 " vim-script repos
@@ -69,7 +70,7 @@ syntax on " syntax highlighting
 colorscheme Tomorrow-Night-Bright
 
 " Line Wrapping ***************************************************************
-set nowrap
+set wrap
 set linebreak  " Wrap at word
 
 " Sessions ********************************************************************
@@ -81,9 +82,7 @@ set listchars=trail:.,tab:>-,eol:$
 set nolist
 
 " Misc settings ***************************************************************
-set backspace=indent,eol,start
 set number " Show line numbers
-set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
 set nofoldenable " Turn off folding
 set mouse=a " This enables proper behaviour copy/paste with mouse
 set t_Co=256 " 256 colors in tmux.
@@ -102,15 +101,12 @@ let NERDTreeChDirMode=2
 " Powerline *******************************************************************
 set laststatus=2
 
-" Pastebin *******************************************************************
-let pastebin_resource = "http://localhost:5000"
-
 " Mappings *******************************************************************
 let mapleader = ","
 let maplocalleader = '\'
 
 " Use C-C instead
-inoremap <Esc> <NOP>
+inoremap <C-C> <Esc>
 
 " Toggle invisible characters
 nnoremap <Leader>i :set list!<CR>
@@ -132,7 +128,7 @@ nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 
 " NERDTree
-nnoremap <Leader>n :NERDTreeToggle<CR>
+" nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
