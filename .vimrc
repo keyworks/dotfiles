@@ -7,7 +7,6 @@ call vundle#rc()
 
 " github repos
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
@@ -20,10 +19,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'sukima/xmledit'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-ruby/vim-ruby'
-Bundle "pangloss/vim-javascript"
-Bundle "juvenn/mustache.vim"
-Bundle "keyworks/vim-pastebin"
-
+Bundle 'pangloss/vim-javascript'
+Bundle 'juvenn/mustache.vim'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
 " vim-script repos
 Bundle 'L9'
@@ -66,8 +65,10 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Colors **********************************************************************
-syntax on " syntax highlighting
-colorscheme Tomorrow-Night-Bright
+set t_Co=256
+syntax on
+set background=dark
+colorscheme base16-default
 
 " Line Wrapping ***************************************************************
 set wrap
@@ -85,54 +86,35 @@ set nolist
 set number " Show line numbers
 set nofoldenable " Turn off folding
 set mouse=a " This enables proper behaviour copy/paste with mouse
-set t_Co=256 " 256 colors in tmux.
 set nocompatible
 set encoding=utf-8
 set colorcolumn=80
-
-" NERDTree ********************************************************************
-let NERDTreeHijackNetrw=0 " Use instead of Netrw when doing an edit
-let NERDTreeMouseMode=2 " Single click for directories only
-let NERDTreeShowBookmarks=1 " Always show bookmarks
-let NERDTreeShowHidden=1 " Show hidden
-let NERDTreeMinimalUI=1
-let NERDTreeChDirMode=2
+set autochdir
 
 " Powerline *******************************************************************
 set laststatus=2
+
+" Syntastic *******************************************************************
+let g:syntastic_check_on_open=1
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['html', 'eruby'] }
 
 " Mappings *******************************************************************
 let mapleader = ","
 let maplocalleader = '\'
 
-" Use C-C instead
-inoremap <C-C> <Esc>
+" Use C-c instead
+inoremap <C-c> <Esc>
 
 " Toggle invisible characters
 nnoremap <Leader>i :set list!<CR>
-
-" Navigation
-nnoremap <Leader>p <C-^> " Go to previous file
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-nnoremap  <Up>     <NOP>
-nnoremap  <Down>   <NOP>
-nnoremap  <Left>   <NOP>
-nnoremap  <Right>  <NOP>
 
 " Tabs
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 
-" NERDTree
-" nnoremap <Leader>n :NERDTreeToggle<CR>
-
 " vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Syntastic
-let g:syntastic_check_on_open=1
