@@ -115,6 +115,10 @@ nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
 
+" Very magic RegEx's
+nnoremap / /\v
+cnoremap %s/ %s/\v
+
 " vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
