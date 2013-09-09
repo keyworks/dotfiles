@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 " Vundle **********************************************************************
 let g:vundle_default_git_proto = 'git'
 set runtimepath+=~/.vim/bundle/vundle/
