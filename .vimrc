@@ -20,6 +20,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'juvenn/mustache.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'chriskempson/base16-vim'
 
 " vim-script repos
 Bundle 'L9'
