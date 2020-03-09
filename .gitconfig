@@ -1,15 +1,31 @@
 [user]
-	name = Jay Kim
-	email = keyworks@gmail.com
+  name = Jay Kim
+  email = keyworks@gmail.com
 [core]
-	editor = vi
+  editor = vim
 [color]
-  	ui = auto
+  ui = auto
 [core]
-  	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = /Users/jkim/.gitignore_global
 [diff]
-	tool = vimdiff
-[merge]
-	conflictstyle = "diff3"
-[github]
-	user = keyworks
+  tool = default-difftool
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+  sync = !git fetch -n origin master && git rebase origin/master
+  new = checkout origin/master -b
+  changed = ! git diff --diff-filter=ACMRTUX --name-only `git merge-base HEAD origin/master`
+  pychanged = ! git changed | grep -v thrift | grep -v ttypes | egrep '.py$'
+  showfiles = show --pretty="format:" --name-only
+  s = status
+  d = diff
+  co = checkout
+  r = rebase
+  c = commit
+  lg = log --pretty=sweet
+  skim = reset --hard HEAD~1
+[pretty]
+  sweet = "%cD %C(auto)%h %Creset%<(10,trunc)%Cblue%an%C(auto) %d %s"
+[commit]
+  verbose = true
