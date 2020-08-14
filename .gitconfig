@@ -1,6 +1,3 @@
-[user]
-  name = Jay Kim
-  email = keyworks@gmail.com
 [core]
   editor = vim
 [color]
@@ -29,3 +26,5 @@
   sweet = "%cD %C(auto)%h %Creset%<(10,trunc)%Cblue%an%C(auto) %d %s"
 [commit]
   verbose = true
+[grep]
+  extendedRegexp = true
