@@ -1,48 +1,34 @@
 " Vundle **********************************************************************
-let g:vundle_default_git_proto = 'git'
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible
+filetype off
 
-" github repos
-Bundle 'gmarik/vundle'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-haml'
-Bundle 'groenewege/vim-less'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'sukima/xmledit'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'pangloss/vim-javascript'
-Bundle 'juvenn/mustache.vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'chriskempson/base16-vim'
+"let g:vundle_default_git_proto = 'git'
+"set runtimepath+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 
-" vim-script repos
-Bundle 'L9'
-Bundle 'eruby.vim'
-Bundle 'Jinja'
+call vundle#begin()
+
+" Vundle Bundles
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-sleuth'
+Plugin 'prettier/vim-prettier'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'neoclide/jsonc.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 " File stuff ******************************************************************
-filetype plugin indent on
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
+autocmd BufNewFile,BufRead *.json setlocal filetype=jsonc
 
-augroup custom_autocmds
-  autocmd!
-  autocmd BufWritePre * :%s/\v\s+$//e
-
-  autocmd FileType ejs setlocal syntax=eruby
-  autocmd FileType hbs setlocal filetype=mustache
-  autocmd FileType twig setlocal filetype=htmljinja
-  autocmd FileType htmljinja setlocal noexpandtab
-augroup END
+" Netrw ***********************************************************************
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
 
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
@@ -63,10 +49,13 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Colors **********************************************************************
-set t_Co=256
 syntax on
-set background=dark
-colorscheme base16-default
+set t_Co=256
+
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " Line Wrapping ***************************************************************
 set wrap
@@ -78,25 +67,11 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 " Invisible characters ********************************************************
 set listchars=trail:.,tab:>-,eol:$
-set nolist
+"set nolist " Don't show invisible characters
 
 " Misc settings ***************************************************************
 set number " Show line numbers
-set nofoldenable " Turn off folding
-set mouse=a " This enables proper behaviour copy/paste with mouse
-set nocompatible
-set encoding=utf-8
-set colorcolumn=80
-set autochdir
-
-" Powerline *******************************************************************
-set laststatus=2
-
-" Syntastic *******************************************************************
-let g:syntastic_check_on_open=1
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['html', 'eruby'] }
+set noswapfile
 
 " Mappings *******************************************************************
 let mapleader = ","
@@ -108,15 +83,11 @@ inoremap <C-c> <Esc>
 " Toggle invisible characters
 nnoremap <Leader>i :set list!<CR>
 
-" Tabs
-nnoremap <Leader>t :tabnew<CR>
-nnoremap <Leader>[ :tabp<CR>
-nnoremap <Leader>] :tabn<CR>
+" Prettier *******************************************************************
 
-" Very magic RegEx's
-nnoremap / /\v
-cnoremap %s/ %s/\v
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.md Prettier
 
-" vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" Ctrl+P **********************************************************************
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
